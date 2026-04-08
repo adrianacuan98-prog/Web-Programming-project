@@ -42,6 +42,10 @@ body{
     margin-left: auto;
     width:25%;
 }
+.profile{
+    display: flex;
+    flex-direction: row;
+}
 
 .overhead-banner{
     text-align: center;

@@ -38,13 +38,60 @@
             ex. <main id= "About Us"></main>-->
 
             <p>Carousel or a little gallery or maybe a photo</p>
+
+            <div class="slideshow">
+                <script src="javascript/home-page.js"></script>
+                <div class="slide">
+                    <!--image and button here-->
+                    <img src="images/logo.png" alt="logo">
+                    <p>Shop Now!</p>
+                </div>
+                <div class="slide">
+                    <!--image and button here-->
+                    <img src="images/logo.png" alt="logo">
+                    <p>Shop Now!</p>
+                </div>
+                <div class="slide">
+                    <!--image and button here-->
+                    <img src="images/logo.png" alt="logo">
+                    <p>Shop Now!</p>
+                </div>
+                <div class="slide">
+                    <!--image and button here-->
+                    <img src="images/logo.png" alt="logo">
+                    <p>Shop Now!</p>
+                </div>
+
+                <!--next and previous buttons-->
+                <a class="previous" onclick="plusSlides(-1)">&#10094</a>
+                <a class="next" onclick="plusSlides(1)">&#10095</a>
+                <br>
+
+                <!--dots and circles at the bottom of the slideshow-->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+
+             <h1>Teams Favorite books</h1><br>
             <div class="team-fav-books">
-                <h1>Teams Favorite books</h1><br>
-                <!--or maybe use a json file to collect all the books and have it filtered by team fav-->
-                <a href=""><img src="images/maze-runners.png" alt="Maze Runners by James Dashner"></a>
-                <p>The Maze Runners Book 1</p>
-                <p>James Dashner</p>
-                <p>$13.99</p>
+                <div class="books">
+                    <!--or maybe use a json file to collect all the books and have it filtered by team fav-->
+                    <a href=""><img src="images/The_Secret_Life_of_Bees.jpg" alt="The Secret Life of Bees by James Dashner"></a>
+                    <p>The Secret Life of Bees</p>
+                    <p>Sue Monk Kidd</p>
+                    <p>$9.99</p>
+                </div>
+
+                <div class="books">
+                    <a href =""><img src="images/Fahrenheit_451.jpg" alt="Fahrenheit 451"></a>
+                    <p>Fahreheit 451</p>
+                    <p>Ray Bradbury</p>
+                    <p>$17.00</p>
+                </div>
                 
             </div>
 
@@ -96,6 +143,6 @@
         </footer>
 
         <!--Javascript scripts here-->
-        <script src="script.js"></script>
+        <script src="javascript/script.js"></script>
     </body>
 </html>
