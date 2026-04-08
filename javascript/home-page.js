@@ -1,5 +1,5 @@
 let slideIndex = 0;
-let slides = 0;
+
 showSlides();
 
 function showSlides()
@@ -9,12 +9,17 @@ function showSlides()
     {
         slides[i].style.display = "none";
     }
+    slideIndex++;
+
+    if(slideIndex > slides.length)
+    {
+        slideIndex = 1;
+    }
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 10000);
+}
+function plusSlides(n)
+{
+    showSlides(slideIndex += n);
 }
 
-slideIndex++;
-if(slideIndex > slides.length)
-{
-    slideIndex = 1;
-}
-slides[slideIndex-1].style.display = "block";
-setTimeout(showSlides, 2000);
