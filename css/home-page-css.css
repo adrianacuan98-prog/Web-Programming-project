@@ -2,7 +2,61 @@
 
 }
 
-.team-fav-books img{
-    width: 400px;
-    height: 400px;
+.books img{
+    width: 115.2px;
+    height: 180px;
+}
+.books{
+    padding:10px;
+}
+.team-fav-books{
+    display:flex;
+    flex-direction: row;
+}
+
+.slideshow{
+    box-sizing:border-box;
+    max-width: 1080px;
+    position:relative;
+    margin: auto;
+}
+.slide{
+    display:none;
+}
+.previous, .next{
+    position: absolute;
+    top: 50%;
+
+    width: auto;
+    margin-top: -22px; /*look into this*/
+    padding: 10px;
+    
+    color: var(--tertiary-color);
+
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6 ease; /*look more into this*/
+    user-select: none; /*wheter or not user can select text*/
+}
+.next{
+    right: 0;
+    border-radius: 3px 0px 0px 3px;
+}
+.previous:hover, .next:hover{
+    background-color: lavenderblush;
+}
+.slide p{
+    color: white;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    margin: 0px 2px;
+    background-color: var(--tertiary-color);
+    border-radius:50%;
+    display: inline;
+    transition: background-color 0.6 ease; /*look into this*/
 }

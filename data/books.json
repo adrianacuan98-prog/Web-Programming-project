@@ -2,7 +2,5 @@ const books =`
 [
     {"id": 1, "title": "The Maze Runner", "author": "James Dashner", "price": 13.99, "image": "images/maze-runners.png"},
     {"id": 2, "title": "The Giver", "author": "Lois Lowry", "price": 10.99, "image": "images/maze-runners.png"}
-
-
 ]
 `;
