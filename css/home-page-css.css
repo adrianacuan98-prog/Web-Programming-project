@@ -9,10 +9,11 @@
 .books{
     padding:10px;
 }
-.team-fav-books{
+.team-fav-books, .best-seller{
     display:flex;
     flex-direction: row;
 }
+
 
 .slideshow{
     box-sizing:border-box;
@@ -59,4 +60,17 @@
     border-radius:50%;
     display: inline;
     transition: background-color 0.6 ease; /*look into this*/
+}
+
+.slide img{
+    width: 100%;
+    height:fit-content;
+}
+
+.featured-ad img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /* width: 1080px;
+    height: fit-content; */
 }

@@ -1,0 +1,33 @@
+#shopping-cart, #order-summary{
+    border: 3px solid var(--tertiary-color);
+    padding: 10px;
+    background-color:lavenderblush;
+}
+#shopping-cart{
+    width: 576px;
+    height: auto;
+}
+#order-summary{
+    width: 350px;
+    height:auto;
+}
+#order-summary td{
+    padding: 10px;
+}
+#shopping-cart img{
+    width: 96px;
+    height: 150px;
+}
+#shopping-cart td, #order-summary td{
+    text-align: center;
+}
+.shopping-section, .header{
+    display:flex;
+    flex-direction: row;
+}
+#order-summary{
+    margin-top: 0;
+}
+.header{
+    gap: 725px;
+}

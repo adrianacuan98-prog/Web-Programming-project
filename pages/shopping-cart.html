@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Bookstore</title>
+        <title>Shopping Cart</title>
         <!--Link your css or javasrcipt here-->
-        <link rel="stylesheet" href="css/styling.css">
-        <link rel="stylesheet" href="css/home-page-css.css">
+        <link rel="stylesheet" href="../css/styling.css">
+        <link rel="stylesheet" href="../css/shopping-cart.css">
     </head>
     <body>
         <div id="main-header">
@@ -14,11 +14,11 @@
             </div>
             <!--create a logo-->
             <nav class="profile">
-                <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+                <a href="../index.html"><img src="../images/logo.png" alt="Logo"></a>
                 <ul>
-                    <li><a href="my-account.html">My Account</a></li>
+                    <li><a href="pages/">My Account</a></li>
                     <li><a href="pages/">My Wishlist</a></li>
-                    <li><a href="pages/shopping-cart.html"><img id="icon" src="images/shopping-cart.png"></a></li>
+                    <li><a href="pages/"><img id="icon" src="../images/shopping-cart.png"></a></li>
                 </ul>
                 
             </nav>
@@ -36,59 +36,71 @@
             <!--your content goes here-->
             <!--give your main an id so you can style it specifically  without touching the shared layout
             ex. <main id= "About Us"></main>-->
-
-
-            <div class="slideshow">
-                
-                <div class="slide">
-                    <!--image and button here-->
-                    <img src="images/carousel-slides/Welcome-page-slide.png" alt="logo">
-                    <p>Shop Now!</p>
-                </div>
-                <div class="slide">
-                    <!--image and button here-->
-                    <img src="images/carousel-slides/classic-slide.png" alt="logo">
-                    <p>Shop Now!</p>
-                </div>
-                <!-- <div class="slide">
-                    /image and button here/
-                    <img src="images/logo.png" alt="logo">
-                    <p>Shop Now!</p>
-                </div> -->
-                <!-- <div class="slide">
-                    /image and button here/
-                    <img src="images/logo.png" alt="logo">
-                    <p>Shop Now!</p>
-                </div> -->
-
-                <!--next and previous buttons-->
-                <a class="previous" onclick="plusSlides(-1)">&#10094</a>
-                <a class="next" onclick="plusSlides(1)">&#10095</a>
-                <br>
-
-                <!--dots and circles at the bottom of the slideshow-->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                </div>
+            <div class="header">
+            <h1>My Shopping Cart</h1>
+            <h1>Order Summary</h1>
             </div>
+            <div class="shopping-section">
+            <table id="shopping-cart">
+                <thead>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </thead>
+                <tfoot>
 
-             <h1>Teams Favorite books</h1><br>
-            <div class="team-fav-books">
-                <script src="javascript/script.js"></script>
-            </div>
-
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="../images/Fahrenheit_451.jpg">
+                            <p>Fahrenheit 451</p>
+                        </td>
+                        <td>$17.00</td>
+                        <td>1</td>
+                        <td>$17.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../images/Fahrenheit_451.jpg">
+                            <p>Fahrenheit 451</p>
+                        </td>
+                        <td>$17.00</td>
+                        <td>1</td>
+                        <td>$17.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--The order summary table colspan 2 for button-->
             
+            <table id="order-summary">
+                <thead>
+                    
+                </thead>
+                <tfoot>
 
-            <div class="featured-ad">
-                <img src="images/Fahrenheit-451-featured-ad.png" alt="Fahrenheit 451 featured ad">  
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>SubTotal</td>
+                        <td>$0.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Cart Total</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr class="button">
+                        <td colspan="2"><button>Procced to Checkout</button></td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
-
-            <h1>Best Sellers</h1>
-            <div class="best-seller"></div>
-
 
         </main>
         <footer>
@@ -102,7 +114,7 @@
                 <tbody>
                     <tr>
                         <td><!--coloumn 1-->
-                            <img src="images/logo.png" alt="logo"><br>
+                            <img src="../images/logo.png" alt="logo"><br>
                             <p>Bookstore with great prices</p>
                         </td>
                         <td><!--column 2-->
@@ -137,8 +149,7 @@
         </footer>
 
         <!--Javascript scripts here-->
-        <script src="javascript/home-page.js"></script>
-        <script src="data/books.js"></script>
+        <script src="../javascript/script.js"></script>
 
     </body>
 </html>
