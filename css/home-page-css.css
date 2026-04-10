@@ -9,10 +9,11 @@
 .books{
     padding:10px;
 }
-.team-fav-books{
+.team-fav-books, .best-seller{
     display:flex;
     flex-direction: row;
 }
+
 
 .slideshow{
     box-sizing:border-box;
