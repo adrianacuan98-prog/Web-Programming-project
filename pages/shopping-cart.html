@@ -37,22 +37,26 @@
             <!--give your main an id so you can style it specifically  without touching the shared layout
             ex. <main id= "About Us"></main>-->
             <div class="header">
-            <h1>My Shopping Cart</h1>
-            <h1>Order Summary</h1>
+            
+           
             </div>
             <div class="shopping-section">
+
+            <div class="cart-items">
+            <h1>My Shopping Cart</h1>
             <table id="shopping-cart">
                 <thead>
                     <th>Item</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total Price</th>
+                    <th> </th>
                 </thead>
                 <tfoot>
 
                 </tfoot>
-                <tbody>
-                    <tr>
+                <tbody id="book-items">
+                    <!-- <tr>
                         <td>
                             <img src="../images/Fahrenheit_451.jpg">
                             <p>Fahrenheit 451</p>
@@ -60,6 +64,7 @@
                         <td>$17.00</td>
                         <td>1</td>
                         <td>$17.00</td>
+                        <td><button onclick="removeFromCart(item.isbn)">Remove Book</button></td>
                     </tr>
                     <tr>
                         <td>
@@ -69,11 +74,15 @@
                         <td>$17.00</td>
                         <td>1</td>
                         <td>$17.00</td>
-                    </tr>
+                        <td><button onclick="removeFromCart(item.isbn)">Remove Book</button></td>
+                    </tr> -->
                 </tbody>
             </table>
             <!--The order summary table colspan 2 for button-->
+            </div>
             
+            <div class="summary">
+                 <h1>Order Summary</h1>
             <table id="order-summary">
                 <thead>
                     
@@ -84,7 +93,7 @@
                 <tbody>
                     <tr>
                         <td>SubTotal</td>
-                        <td>$0.00</td>
+                        <td id="subtotal">$0.00</td>
                         
                     </tr>
                     <tr>
@@ -92,15 +101,21 @@
                         <td>$0.00</td>
                     </tr>
                     <tr>
+                        <td>Estimated Tax</td>
+                        <td id="tax">$0.00</td>
+                    </tr>
+                    <tr>
                         <td>Cart Total</td>
-                        <td>$0.00</td>
+                        <td id="total">$0.00</td>
                     </tr>
                     <tr class="button">
-                        <td colspan="2"><button>Procced to Checkout</button></td>
+                        <td colspan="2"><button onclick="document.location.href='checkout-page.html'">Procced to Checkout</button></td>
                     </tr>
                 </tbody>
             </table>
             </div>
+            </div>
+            <button onclick="document.location='../index.html'">Continue Shopping</button>
 
         </main>
         <footer>
