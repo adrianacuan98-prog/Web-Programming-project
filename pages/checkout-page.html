@@ -40,25 +40,96 @@
             <!--A details for the section-->
 
             <h1>My Checkout Page</h1>
+            <div class="check-page">
             <div class="cards">
-                <details class="contact-information">
-                    <summary>Contact Information</summary>
-                    <form method="get" action="https://www.barnesandnoble.com/action_page.php"><!--error-->
-                        <fieldset>
-                            <legend>Contact information</legend>
-                            <lable for="fname">First Name</lable><br>
-                            <input type="text" name="firstName" id="fname" placeholder="First Name"><br>
-                            <lable for="lname">Last Name</lable><br>
-                            <input type="text" name="lastName" id="lname" placeholder="Last Name"><br>
-                            <label for="email">Email</label><br>
-                            <input type="email" name="email" id="email">
+                <form method="get" action="https://www.barnesandnoble.com/action_page.php">
+                    <details class="contact-information">
+                        <summary>Contact Information</summary>                       <form method="get" action="https://www.barnesandnoble.com/action_page.php"><!--error-->
+                            <fieldset>
+                                <legend>Contact information</legend>
+                                <lable for="fname">First Name</lable><br>
+                                <input type="text" name="firstName" id="fname" placeholder="First Name"><br>
+                                <lable for="lname">Last Name</lable><br>
+                                <input type="text" name="lastName" id="lname" placeholder="Last Name"><br>
+                                <label for="email">Email</label><br>
+                                <input type="email" name="email" id="email"><br>
 
 
-                            <input type="submit">
-                        </fieldset>
+                                
+                            
 
-                    </form>
-                </details>
+                    </details>
+                    <details class="shipping-address">
+                        <summary>Shipping Address</summary>
+                        <legend>Shipping Address</legend>
+                        <label for="streetaddr">Street Address</label><br>
+                        <input type="text" name="street-address" id="streetaddr"><br>
+                        <label for="city">City</label><br>
+                        <input type="text" name="city" id="city"><br>
+                        <label for="zipCode">Zip Code</label><br>
+                        <input type="number" name="zipcode" id="zipCode"><br>
+                        <label for="country">Country</label><br>
+                        <select name="country">
+                            <option>United States</option>
+                            <option>Canada</option>
+                            <option>Puerto Rico</option>
+                            <option>Hawaii</option>
+                        </select><br>
+                        
+                    </details>
+                    <details>
+                        <summary>Shipping Method</summary>
+                        
+                    </details>
+                    <details>
+                        <summary>Payment</summary>
+                        <legend>Payment</legend>
+                        <label for="nameCard">Name on Card</label><br>
+                        <input type="text" name="nameCard" id="nameCard"><br>
+                        <label for="cardNum">Card Number</label><br>
+                        <input type="text" name="cardNum" id="cardNum" placeholder="5555-5555-5555-5555" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"><br>
+                        <label for="cvv">CVV</label><br>
+                        <input type="text" name="cvv"id=cvv placeholder="123" pattern="[0-9]{3}"><br>
+                        <label for="expDate">Expiration Date</label><br>
+                        <input type="month" name="expDate" id="expDate" placeholder="MM/YY"><br>
+                        <input type="submit">
+                    </details> 
+                    </fieldset>
+                </form>
+            </div>
+            <div class="summary">
+                <h1>Order Summary</h1>
+                 <table id="order-summary">
+                <thead>
+                    
+                </thead>
+                <tfoot>
+
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>SubTotal</td>
+                        <td id="subtotal">$0.00</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Estimated Tax</td>
+                        <td id="tax">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Cart Total</td>
+                        <td id="total">$0.00</td>
+                    </tr>
+                    <tr class="button">
+                        <td colspan="2"><button onclick="alert('Your order has been submitted!')">Place Order</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
             </div>
 
         </main>
@@ -108,7 +179,7 @@
         </footer>
 
         <!--Javascript scripts here-->
-        <script src="script.js"></script>
+        <script src="../javascript/script.js"></script>
         <script src="../javascript/checkout.js"></script>
 
     </body>

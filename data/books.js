@@ -1,10 +1,10 @@
-async function loadBook(isbn) {
-    const res = await fetch(`https://openlibrary.org/isbn/${isbn}.json`);
-    const Bookdata = await res.json();
-    console.log(Bookdata); //what it looks like in consoleS
-    }
+// async function loadBook(isbn) {
+//     const res = await fetch(`https://openlibrary.org/isbn/${isbn}.json`);
+//     const Bookdata = await res.json();
+//     console.log(Bookdata); //what it looks like in consoleS
+//     }
 
-loadBook("9780142407332");
+// loadBook("9780142407332");
 
 // The data turns into HTML to display the content
 /*This includes: 
@@ -19,7 +19,7 @@ What if the API is missing something?
 if the cover fails put a palceholder imgae
 if the author is missing: UNKNOWN AUTHOR 
 return a string of HTML*/
-function displayBook(bookData, isbn, price)
+async function displayBook(bookData, isbn, price)
 {
     //gets the cover from Open Library
     const cover = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
@@ -34,7 +34,7 @@ function displayBook(bookData, isbn, price)
     // There are some different formats when retrieving the author
     //some retrieve a string ("author":[]) and other retrive objects (authors: [])
     //Case 1: Objects
-    if(bookData.authors && bookData.authors.length > 0)
+    if(bookData.authors && bookData.authors.length > 0 && bookData.authors[0].name)
     {
         author = bookData.authors[0].name;
     }
@@ -43,7 +43,24 @@ function displayBook(bookData, isbn, price)
     {
         author = bookData.author[0];
     }
-    //Case 3: |
+    //Case 3:  authors array that contains a 'kry'
+    else if(bookData.authors && bookData.authors.length> 0 && bookData.authors[0].key)
+    {
+        let authorKey = bookData.authors[0].key;
+        let authorUrl = `https://openlibrary.org${authorKey}.json`;
+        try{
+            let response = await fetch(authorUrl);
+            let authorData = await response.json();
+            if(authorData && authorData.name)
+            {
+                author = authorData.name;
+            }
+        }
+        catch(err)
+        {
+            console.log("Error fetching the author:", err);
+        }
+    }
     // missing author
     else
         author = "Unknown Author";
@@ -61,15 +78,15 @@ function displayBook(bookData, isbn, price)
 
 
 // TESTING displayBook()
-document.querySelector(".team-fav-books").innerHTML += displayBook(
-    {
-        title: "Fahrenheit 451",
-        author: ["Ray Bradbury"],
-        isbn: "9781451673319"
-    },
-    "9781451673319",
-    17.00
-);
+// document.querySelector(".team-fav-books").innerHTML += displayBook(
+//     {
+//         title: "Fahrenheit 451",
+//         author: ["Ray Bradbury"],
+//         isbn: "9781451673319"
+//     },
+//     "9781451673319",
+//     17.00
+// );
 
 
 /*Add to cart
