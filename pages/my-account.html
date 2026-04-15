@@ -15,7 +15,7 @@
             <nav class="profile">
                 <a href="../index.html"><img src="../images/logo.png" alt="Logo"></a>
                 <ul>
-                    <li><a href="account-page.html">My Account</a></li>
+                    <li><a href="my-account.html">My Account</a></li>
                     <li><a href="wishlist-page.html">My Wishlist</a></li>
                     <li><a href="shopping-cart.html"><img id="icon" src="../images/shopping-cart.png" alt="Shopping Cart"></a></li>
                 </ul>
@@ -37,51 +37,60 @@
 
             <section class="account-layout">
                 <div class="account-card profile-card">
-                    <img src="../images/logo.png" alt="Profile picture" class="account-avatar">
-                    <h2 id="user-name">Vasilije Lopicic</h2>
-                    <p id="membership-text">Member since 2026</p>
-                    <button id="edit-btn">Edit Profile</button>
-                </div>
-
-                <div class="account-card info-card">
-                    <h2>Account Information</h2>
-
-                    <div class="info-row">
-                        <span class="label">Email:</span>
-                        <span id="user-email">vasilije@example.com</span>
+                    <div>
+                        <img src="../images/logo.png" alt="Profile picture" class="account-avatar">
+                        <h2 id="user-name">Vasilije Lopicic</h2>
+                        <p id="membership-text">Member since 2026</p>
                     </div>
 
-                    <div class="info-row">
-                        <span class="label">Favorite Genre:</span>
-                        <span id="user-genre">Science Fiction</span>
-                    </div>
-
-                    <div class="info-row">
-                        <span class="label">Saved Address:</span>
-                        <span id="user-address">Jacksonville, Florida</span>
-                    </div>
-
-                    <div class="info-row">
-                        <span class="label">Last Login:</span>
-                        <span id="last-login">Loading...</span>
+                    <div class="profile-buttons">
+                        <button id="edit-btn">Edit Profile</button>
                     </div>
                 </div>
-            </section>
 
-            <section class="account-stats">
-                <div class="account-card stat-box">
-                    <h3>Wishlist</h3>
-                    <p id="wishlist-count">4 Books</p>
-                </div>
+                <div class="right-side">
+                    <div class="account-card info-card">
+                        <h2>Account Information</h2>
 
-                <div class="account-card stat-box">
-                    <h3>Cart</h3>
-                    <p id="cart-count">2 Items</p>
-                </div>
+                        <div class="info-row">
+                            <span class="label">Email:</span>
+                            <span id="user-email">vasilije@example.com</span>
+                        </div>
 
-                <div class="account-card stat-box">
-                    <h3>Orders</h3>
-                    <p id="orders-count">3 Orders</p>
+                        <div class="info-row">
+                            <span class="label">Favorite Genre:</span>
+                            <span id="user-genre">Science Fiction</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="label">Saved Address:</span>
+                            <span id="user-address">Jacksonville, Florida</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="label">Last Login:</span>
+                            <span id="last-login">Loading...</span>
+                        </div>
+
+                        <button id="edit-info-btn">Edit Account Information</button>
+                    </div>
+
+                    <section class="account-stats">
+                        <div class="account-card stat-box">
+                            <h3>Wishlist</h3>
+                            <p id="wishlist-count">4 Books</p>
+                        </div>
+
+                        <div class="account-card stat-box">
+                            <h3>Cart</h3>
+                            <p id="cart-count">2 Items</p>
+                        </div>
+
+                        <div class="account-card stat-box">
+                            <h3>Orders</h3>
+                            <p id="orders-count">3 Orders</p>
+                        </div>
+                    </section>
                 </div>
             </section>
 
@@ -98,17 +107,38 @@
                     <tbody>
                         <tr>
                             <td>The Maze Runner</td>
-                            <td>Shipped</td>
+                            <td>
+                                <div class="status-cell">
+                                    <span>Shipped</span>
+                                    <div class="status-bar">
+                                        <div class="status-fill shipped"></div>
+                                    </div>
+                                </div>
+                            </td>
                             <td>$13.99</td>
                         </tr>
                         <tr>
                             <td>The Giver</td>
-                            <td>Processing</td>
+                            <td>
+                                <div class="status-cell">
+                                    <span>Processing</span>
+                                    <div class="status-bar">
+                                        <div class="status-fill processing"></div>
+                                    </div>
+                                </div>
+                            </td>
                             <td>$10.99</td>
                         </tr>
                         <tr>
                             <td>Fahrenheit 451</td>
-                            <td>Delivered</td>
+                            <td>
+                                <div class="status-cell">
+                                    <span>Delivered</span>
+                                    <div class="status-bar">
+                                        <div class="status-fill delivered"></div>
+                                    </div>
+                                </div>
+                            </td>
                             <td>$17.00</td>
                         </tr>
                     </tbody>
@@ -129,7 +159,7 @@
                                 <ul>
                                     <li><a href="book-of-the-month.html">Book of the Month</a></li>
                                     <li><a href="about-page.html">About Us</a></li>
-                                    <li><a href="account-page.html">My Account</a></li>
+                                    <li><a href="my-account.html">My Account</a></li>
                                 </ul>
                             </nav>
                         </td>
