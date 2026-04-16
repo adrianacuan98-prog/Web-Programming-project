@@ -1,4 +1,5 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart = JSON.parse(localStorage.getItem("cart")) || [];
 //Added localStorage so we have the array on all pages
 
 //this will save the cart after every function
@@ -10,7 +11,7 @@ function saveCart() {
 
 function addToCart(isbn, title, price)
 {
-    const book = {cover: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`, isbn: isbn, title: title, price: price, quantity: 1};
+    const book = {cover: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`, isbn: isbn, title: title, price: parseFloat(price), quantity: 1};
     cart.push(book);
     saveCart();
     alert(title + " Added to cart!");

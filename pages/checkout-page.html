@@ -42,32 +42,28 @@
             <h1>My Checkout Page</h1>
             <div class="check-page">
             <div class="cards">
-                <form method="get" action="https://www.barnesandnoble.com/action_page.php">
-                    <details class="contact-information">
+                <form method="get" action="http://www.randyconnolly.com/tests/process.php">
+                    <details class="contact-information" open>
                         <summary>Contact Information</summary>                       <form method="get" action="https://www.barnesandnoble.com/action_page.php"><!--error-->
                             <fieldset>
-                                <legend>Contact information</legend>
+                                
                                 <lable for="fname">First Name</lable><br>
-                                <input type="text" name="firstName" id="fname" placeholder="First Name"><br>
+                                <input type="text" name="firstName" id="fname" placeholder="First Name" required><br>
                                 <lable for="lname">Last Name</lable><br>
                                 <input type="text" name="lastName" id="lname" placeholder="Last Name"><br>
                                 <label for="email">Email</label><br>
-                                <input type="email" name="email" id="email"><br>
-
-
-                                
-                            
+                                <input type="email" name="email" id="email" required><br>
 
                     </details>
                     <details class="shipping-address">
                         <summary>Shipping Address</summary>
-                        <legend>Shipping Address</legend>
+                        
                         <label for="streetaddr">Street Address</label><br>
-                        <input type="text" name="street-address" id="streetaddr"><br>
+                        <input type="text" name="street-address" id="streetaddr" required><br>
                         <label for="city">City</label><br>
-                        <input type="text" name="city" id="city"><br>
+                        <input type="text" name="city" id="city" required><br>
                         <label for="zipCode">Zip Code</label><br>
-                        <input type="number" name="zipcode" id="zipCode"><br>
+                        <input type="number" name="zipcode" id="zipCode" required><br>
                         <label for="country">Country</label><br>
                         <select name="country">
                             <option>United States</option>
@@ -77,22 +73,28 @@
                         </select><br>
                         
                     </details>
-                    <details>
+                    <details class="shipping-method">
                         <summary>Shipping Method</summary>
-                        
+                        <label for="ecomShip">Economy Shipping: 5-8 business days: $3.99</label>
+                        <input type="radio" name="shippingMethod" value="3.99"><br>
+                        <label for="stanShip">Standard Shipping: 3-5 business days: $4.99</label>
+                        <input type="radio" name="shippingMethod" value="4.99"><br>
+                        <label for="expressShip">Economy Shipping: 2-3 business days: $9.99</label>
+                        <input type="radio" name="shippingMethod" value="9.99"><br>
                     </details>
-                    <details>
+                    <details class="payment">
                         <summary>Payment</summary>
-                        <legend>Payment</legend>
+                        
                         <label for="nameCard">Name on Card</label><br>
-                        <input type="text" name="nameCard" id="nameCard"><br>
+                        <input type="text" name="nameCard" id="nameCard" required><br>
                         <label for="cardNum">Card Number</label><br>
-                        <input type="text" name="cardNum" id="cardNum" placeholder="5555-5555-5555-5555" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"><br>
+                        <input type="text" name="cardNum" id="cardNum" placeholder="5555-5555-5555-5555" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" required><br>
                         <label for="cvv">CVV</label><br>
-                        <input type="text" name="cvv"id=cvv placeholder="123" pattern="[0-9]{3}"><br>
+                        <input type="text" name="cvv"id=cvv placeholder="123" pattern="[0-9]{3}" required><br>
                         <label for="expDate">Expiration Date</label><br>
-                        <input type="month" name="expDate" id="expDate" placeholder="MM/YY"><br>
+                        <input type="month" name="expDate" id="expDate" placeholder="MM/YY" required><br>
                         <input type="submit">
+                        <input type="reset">
                     </details> 
                     </fieldset>
                 </form>
@@ -114,7 +116,7 @@
                     </tr>
                     <tr>
                         <td>Shipping</td>
-                        <td>$0.00</td>
+                        <td id="shipping">$0.00</td>
                     </tr>
                     <tr>
                         <td>Estimated Tax</td>
@@ -130,6 +132,14 @@
                 </tbody>
             </table>
             </div>
+            </div>
+            <button onclick="document.location.href='shopping-cart.html'">Back to Cart</button>
+
+            <div id="modal-form">
+                <div>
+                    <span class="close-model">close</span>
+                    <p>text here</p>
+                </div>
             </div>
 
         </main>

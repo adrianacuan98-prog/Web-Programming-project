@@ -8,8 +8,14 @@
 }
 .books{
     padding:10px;
+    width:200px;
+    height: 400px;
 }
-.team-fav-books, .best-seller{
+.books p{
+    width: 125px;
+    
+}
+.team-fav-books, .best-seller, .classics{
     display:flex;
     flex-direction: row;
 }
@@ -87,4 +93,17 @@ button:hover{
     background-color: var(--mainbg-color);
     color: var(--button-color);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+#heart-icon{
+    width:32px;
+    height: 32px;
+}
+main{
+    margin:0px 30px 0px 30px;
+}
+h1{
+    background-color: white;
+    color: var(--tertiary-color);
+    border-radius: 8px;
+    padding: 10px;
 }

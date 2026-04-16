@@ -30,7 +30,8 @@ const teamFavBooks = [
     {isbn: 9781451673319, price: 17.00},
     {isbn: 9780385737951, price: 13.99},
     {isbn: 9781635575569, price: 19.00} ,
-    {isbn: 9781419711329, price: 10.99}
+    {isbn: 9781419711329, price: 10.99},
+    {isbn: 9781635575583, price:13.99}
 ];
 async function loadteamFavBooks(){
     for(const book of teamFavBooks)
@@ -47,17 +48,7 @@ async function loadteamFavBooks(){
     }
 };
 loadteamFavBooks();
-// teamFavBooks.forEach(book => {
-//     fetch(`https://openlibrary.org/isbn/${book.isbn}.json`)
-//         .then(res => res.json())
-//         .then(data => {
-//             document.querySelector(".team-fav-books").innerHTML += displayBook(
-//                 data,
-//                 book.isbn,
-//                 book.price
-//             );
-//         });
-// });
+
 
 const bestSeller = [
     {isbn: 9780593798430, price: 28.00},
@@ -82,3 +73,24 @@ async function loadBestSellers(){
     }
 };
 loadBestSellers();
+
+const classics = [
+    {isbn:9781594481925, price:17.00},
+    {isbn:9780142407332, price:14.99},
+    {isbn:9780743273565, price:9.99}
+];
+async function loadclassics(){
+    for(const book of classics)
+    {
+        let response = await fetch(`https://openlibrary.org/isbn/${book.isbn}.json`)
+        let data = await response.json();
+
+        document.querySelector(".classics").innerHTML += await displayBook(
+                data,
+                book.isbn,
+                book.price
+            );
+        
+    }
+};
+loadclassics();
