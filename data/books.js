@@ -43,7 +43,7 @@ async function displayBook(bookData, isbn, price)
     {
         author = bookData.author[0];
     }
-    //Case 3:  authors array that contains a 'kry'
+    //Case 3:  authors array that contains a 'key'
     else if(bookData.authors && bookData.authors.length> 0 && bookData.authors[0].key)
     {
         let authorKey = bookData.authors[0].key;
@@ -67,7 +67,7 @@ async function displayBook(bookData, isbn, price)
     
     return `
     <div class="books">
-        <a href="book.html?isbn=${isbn}"><img src="${cover}" alt="${title}"></a>
+        <a href="pages/book.html?isbn=${isbn}&price=${price}"><img src="${cover}" alt="${title}"></a>
         <p>${title}</p>
         <p>${author}</p>
         <p>$${price}</p>
