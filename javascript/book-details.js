@@ -74,4 +74,8 @@ document.getElementById("cart").addEventListener("click", () =>
     {
         addToCart(isbn, document.getElementById("book-title").textContent, price);
     });
-//isbn, document.getElementById("book-title").textContent, 17
+
+    document.getElementById("wish").addEventListener("click", () => 
+    {
+        addToWishlist(isbn, document.getElementById("book-title").textContent, price);
+    });
