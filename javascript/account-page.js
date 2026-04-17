@@ -39,4 +39,17 @@ window.onload = function () {
 
         alert("Account information updated successfully!");
     };
+
+    updateCartCount();
+    updateWishCount();
 };
+function updateCartCount()
+    {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        document.getElementById("cart-count").textContent = cart.length + " Items";
+    }
+    function updateWishCount()
+    {
+        const wish = JSON.parse(localStorage.getItem("wish")) || [];
+        document.getElementById("wishlist-count").textContent = wish.length + " Books";
+    }
