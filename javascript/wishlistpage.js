@@ -42,4 +42,6 @@ function displayWishlist()
     }
     
 }
-displayWishlist();
+if (window.location.pathname.includes("wishlistpage.html")) {
+    displayWishlist();
+}

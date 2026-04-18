@@ -1,6 +1,11 @@
-
-cart = JSON.parse(localStorage.getItem("cart")) || [];
-//Added localStorage so we have the array on all pages
+window.onload = function ()
+{
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    //Added localStorage so we have the array on all pages
+    if (window.location.pathname.includes("shopping-cart.html")) {
+    displayCart();
+}
+};
 
 //this will save the cart after every function
 function saveCart() {
@@ -85,6 +90,4 @@ function displayCart() {
     document.getElementById("tax").textContent = `$${tax.toFixed(2)}`;
     document.getElementById("total").textContent = `$${total.toFixed(2)}`;
 }
-if (window.location.pathname.includes("shopping-cart.html")) {
-    displayCart();
-}
+
