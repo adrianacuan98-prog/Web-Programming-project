@@ -35,14 +35,14 @@
     top: 50%;
 
     width: auto;
-    margin-top: -22px; /*look into this*/
+    margin-top: -22px; 
     padding: 10px;
     
     color: var(--tertiary-color);
 
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6 ease; /*look more into this*/
+    transition: 0.6 ease; 
     user-select: none; /*wheter or not user can select text*/
 }
 .next{
@@ -65,7 +65,7 @@
     background-color: var(--tertiary-color);
     border-radius:50%;
     display: inline;
-    transition: background-color 0.6 ease; /*look into this*/
+    transition: background-color 0.6 ease; 
 }
 
 .slide img{

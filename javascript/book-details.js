@@ -70,11 +70,17 @@ async function displayBookDetails(detailsData)
         author = "Unknown Author";
     }
 
-    // Description
-    let description =
-        detailsData.description.value ||
-        detailsData.description ||
-        "No description available.";
+    let description;
+
+    if (detailsData.description) 
+    {
+        description = detailsData.description.value || detailsData.description;
+    } 
+    else 
+    {
+        description = "No description available";
+    }
+
 
     // Update DOM
     document.getElementById("book-cover").innerHTML = `<img src="${cover}">`;
