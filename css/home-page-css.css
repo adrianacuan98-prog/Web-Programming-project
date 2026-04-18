@@ -61,7 +61,7 @@
 .dot{
     height: 15px;
     width: 15px;
-    margin: 0px 2px;
+    margin:2px;
     background-color: var(--tertiary-color);
     border-radius:50%;
     display: inline;
