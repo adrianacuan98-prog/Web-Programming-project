@@ -14,6 +14,32 @@ async function loadBook()
 }
 
 loadBook();
+
+async function displayProductDetails(detailsData)
+{
+    let classification;
+    if(detailsData.lc_classifications)
+    {
+        classification = detailsData.lc_classifications;
+    }
+    else if(detailsData.dewey_decimal_class)
+    {
+        classification = detailsData.dewey_decimal_class;
+    }
+    let pages = detailsData.number_of_pages;
+    let publishDate = detailsData.publish_date;
+    let publisher = detailsData.publishers;
+    let subject = detailsData.subjects;
+    //there was a genere one
+
+    document.getElementById("publisher").textContent = "Publisher: " + publisher;
+    document.getElementById("Pdate").textContent = "Publish Date: " + publishDate;
+    document.getElementById("pages").textContent = pages + " pages";
+    document.getElementById("classification").textContent = "Classification: " + classification;
+    document.getElementById("genre-subject").textContent = "Subject/Genre: " + subject;
+}
+
+
 async function displayBookDetails(detailsData)
 {
     const cover = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
@@ -23,19 +49,19 @@ async function displayBookDetails(detailsData)
 
     // Author
     let author;
-    if(detailsData.authors && detailsData.authors[0]?.name) {
+    if(detailsData.authors && detailsData.authors[0].name) {
         author = detailsData.authors[0].name;
     }
     else if(detailsData.author && detailsData.author.length > 0) {
         author = detailsData.author[0];
     }
-    else if(detailsData.authors && detailsData.authors[0]?.key) {
+    else if(detailsData.authors && detailsData.authors[0].key) {
         let authorKey = detailsData.authors[0].key;
         let authorUrl = `https://openlibrary.org${authorKey}.json`;
         try {
             let response = await fetch(authorUrl);
             let authorData = await response.json();
-            author = authorData?.name || "Unknown Author";
+            author = authorData.name || "Unknown Author";
         } catch {
             author = "Unknown Author";
         }
@@ -46,16 +72,18 @@ async function displayBookDetails(detailsData)
 
     // Description
     let description =
-        detailsData.description?.value ||
+        detailsData.description.value ||
         detailsData.description ||
         "No description available.";
 
     // Update DOM
     document.getElementById("book-cover").innerHTML = `<img src="${cover}">`;
     document.getElementById("book-title").textContent = title;
-    document.getElementById("book-author").textContent = author;
-    document.getElementById("price").textContent = price.toFixed(2);
+    document.getElementById("book-author").textContent = "by "+ author;
+    document.getElementById("price").textContent = "$" + price.toFixed(2);
     document.getElementById("book-description").textContent = description;
+
+    await displayProductDetails(detailsData);
 }
 
 

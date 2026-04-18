@@ -107,3 +107,19 @@ h1{
     border-radius: 8px;
     padding: 10px;
 }
+.bottom-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.WSWU h2, .newsletter h2{
+    color: var(--tertiary-color);
+}
+.newsletter input[type=email]{
+    margin: 10px 0px 10px 0px;
+    border-radius:8px;
+    padding:10px;
+}

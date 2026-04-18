@@ -77,7 +77,9 @@ loadBestSellers();
 const classics = [
     {isbn:9781594481925, price:17.00},
     {isbn:9780142407332, price:14.99},
-    {isbn:9780743273565, price:9.99}
+    {isbn:9780743273565, price:9.99},
+    {isbn:9780060837020, price:17.99},
+    {isbn:9780451526342, price:12.00}
 ];
 async function loadclassics(){
     for(const book of classics)
