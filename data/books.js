@@ -67,7 +67,7 @@ async function displayBook(bookData, isbn, price)
     
     return `
     <div class="books">
-        <a href="pages/book.html?isbn=${isbn}&price=${price}"><img src="${cover}" alt="${title}"></a>
+        <a href="book.html?isbn=${isbn}&price=${price}"><img src="${cover}" alt="${title}"></a>
         <p>${title}</p>
         <p>${author}</p>
         <p>$${price}</p>
