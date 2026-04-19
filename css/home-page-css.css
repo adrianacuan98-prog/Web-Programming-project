@@ -8,8 +8,14 @@
 }
 .books{
     padding:10px;
+    width:200px;
+    height: 400px;
 }
-.team-fav-books, .best-seller{
+.books p{
+    width: 125px;
+    
+}
+.team-fav-books, .best-seller, .classics{
     display:flex;
     flex-direction: row;
 }
@@ -29,14 +35,14 @@
     top: 50%;
 
     width: auto;
-    margin-top: -22px; /*look into this*/
+    margin-top: -22px; 
     padding: 10px;
     
     color: var(--tertiary-color);
 
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6 ease; /*look more into this*/
+    transition: 0.6 ease; 
     user-select: none; /*wheter or not user can select text*/
 }
 .next{
@@ -55,11 +61,11 @@
 .dot{
     height: 15px;
     width: 15px;
-    margin: 0px 2px;
+    margin:2px;
     background-color: var(--tertiary-color);
     border-radius:50%;
     display: inline;
-    transition: background-color 0.6 ease; /*look into this*/
+    transition: background-color 0.6 ease; 
 }
 
 .slide img{
@@ -87,4 +93,33 @@ button:hover{
     background-color: var(--mainbg-color);
     color: var(--button-color);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+#heart-icon{
+    width:32px;
+    height: 32px;
+}
+main{
+    margin:0px 30px 0px 30px;
+}
+h1{
+    background-color: white;
+    color: var(--tertiary-color);
+    border-radius: 8px;
+    padding: 10px;
+}
+.bottom-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.WSWU h2, .newsletter h2{
+    color: var(--tertiary-color);
+}
+.newsletter input[type=email]{
+    margin: 10px 0px 10px 0px;
+    border-radius:8px;
+    padding:10px;
 }

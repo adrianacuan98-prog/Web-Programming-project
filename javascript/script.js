@@ -1,5 +1,11 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-//Added localStorage so we have the array on all pages
+window.onload = function ()
+{
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    //Added localStorage so we have the array on all pages
+    if (window.location.pathname.includes("shopping-cart.html")) {
+    displayCart();
+}
+};
 
 //this will save the cart after every function
 function saveCart() {
@@ -10,7 +16,7 @@ function saveCart() {
 
 function addToCart(isbn, title, price)
 {
-    const book = {cover: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`, isbn: isbn, title: title, price: price, quantity: 1};
+    const book = {cover: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`, isbn: isbn, title: title, price: parseFloat(price), quantity: 1};
     cart.push(book);
     saveCart();
     alert(title + " Added to cart!");
@@ -54,13 +60,14 @@ function displayCart() {
 
     let subtotal = 0;
 
-    cart.forEach(item => {
+    for(item of cart)
+    {
         const row = document.createElement("tr");
         row.classList.add("cart-item");
 
         row.innerHTML = `
             <td><img src="${item.cover}" alt="${item.title}"><p>${item.title}</p></td>
-            <td>Price: $${item.price.toFixed(2)}</td>
+            <td>$${item.price.toFixed(2)}</td>
             <td>
             <button onclick="changeQuantity('${item.isbn}', -1)">-</button>
             ${item.quantity}
@@ -74,7 +81,7 @@ function displayCart() {
         container.appendChild(row);
 
         subtotal += item.price * item.quantity;
-    });
+    }
 
     const tax = subtotal * 0.07;
     const total = subtotal + tax;
@@ -83,6 +90,4 @@ function displayCart() {
     document.getElementById("tax").textContent = `$${tax.toFixed(2)}`;
     document.getElementById("total").textContent = `$${total.toFixed(2)}`;
 }
-if (window.location.pathname.includes("cart.html")) {
-    displayCart();
-}
+
